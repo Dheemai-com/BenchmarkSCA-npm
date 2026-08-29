@@ -1,0 +1,63 @@
+{
+  "scan": {
+    "commit": "fe1a505",
+    "scannedAt": "2026-08-29T09:58:00+05:30",
+    "trigger": "push",
+    "analyzerVersion": "3db6559658cd",
+    "sastVersion": "c4f9ce954093",
+    "reportedSCA": 5
+  },
+  "findings": [
+    {
+      "name": "axios",
+      "version": "0.21.0"
+    },
+    {
+      "name": "follow-redirects",
+      "version": "1.15.11"
+    },
+    {
+      "name": "loadyaml",
+      "version": "1.0.0"
+    },
+    {
+      "name": "lodash",
+      "version": "4.17.20"
+    },
+    {
+      "name": "minimist",
+      "version": "1.2.0"
+    }
+  ],
+  "scannedPackages": [
+    {
+      "name": "axios",
+      "version": "0.21.0"
+    },
+    {
+      "name": "follow-redirects",
+      "version": "1.15.11"
+    },
+    {
+      "name": "loadyaml",
+      "version": "1.0.0"
+    },
+    {
+      "name": "lodash",
+      "version": "4.17.20"
+    },
+    {
+      "name": "minimist",
+      "version": "1.2.0"
+    },
+    {
+      "name": "mquery",
+      "version": "6.0.0"
+    },
+    {
+      "name": "preact",
+      "version": "10.19.0"
+    }
+  ]
+}
+

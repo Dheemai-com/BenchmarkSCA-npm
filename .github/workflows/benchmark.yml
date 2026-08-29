@@ -1,0 +1,37 @@
+name: SCA benchmark scorecard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify the complete oracle against OSV
+        run: node scripts/verify-oracle.mjs
+      - name: Score the pinned staging scan
+        run: node scripts/score.mjs --results results/staging-latest.json --out scorecard.json --markdown scorecard.md
+      - name: Publish job summary
+        run: cat scorecard.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload reproducible scorecard
+        uses: actions/upload-artifact@v4
+        with:
+          name: sca-scorecard
+          path: |
+            scorecard.json
+            scorecard.md
+          if-no-files-found: error
+

@@ -1,20 +1,88 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "benchmarkId": "BenchmarkSCA-npm",
   "ecosystem": "npm",
   "verifiedAt": "2026-08-29",
-  "cases": {
-    "axios@0.21.0": { "verdict": "cve", "reference": "CVE-2021-3749" },
-    "loadyaml@1.0.0": { "verdict": "malware", "reference": "MAL-2025-25475" },
-    "lodash@4.17.20": { "verdict": "cve", "reference": "CVE-2021-23337" },
-    "minimist@1.2.0": { "verdict": "cve", "reference": "CVE-2020-7598" },
-    "mquery@6.0.0": { "verdict": "clean", "why": "established-package precision control" },
-    "preact@10.19.0": { "verdict": "clean", "why": "near-name precision control" }
+  "oracle": "Every exact resolved package is independently checked against OSV; finding means one or more active advisories, clean means none.",
+  "minimums": {
+    "precision": 1,
+    "recall": 1,
+    "f1": 1,
+    "accuracy": 1,
+    "coverage": 1,
+    "packages": 7,
+    "findings": 5,
+    "clean": 2,
+    "direct": 6,
+    "transitive": 1
   },
-  "transitiveCases": {
-    "follow-redirects@1.15.11": {
-      "verdict": "cve",
+  "packages": [
+    {
+      "name": "axios",
+      "version": "0.21.0",
+      "expected": "finding",
+      "relation": "direct",
+      "sourceFile": "package.json",
+      "references": [
+        "GHSA-3g43-6gmg-66jw"
+      ]
+    },
+    {
+      "name": "follow-redirects",
+      "version": "1.15.11",
+      "expected": "finding",
+      "relation": "transitive",
+      "sourceFile": "lockfile-fixture/package-lock.json",
       "via": "axios",
-      "reference": "GHSA-r4q5-vmmm-2653"
+      "references": [
+        "GHSA-r4q5-vmmm-2653"
+      ]
+    },
+    {
+      "name": "loadyaml",
+      "version": "1.0.0",
+      "expected": "finding",
+      "relation": "direct",
+      "sourceFile": "package.json",
+      "references": [
+        "MAL-2025-25475"
+      ]
+    },
+    {
+      "name": "lodash",
+      "version": "4.17.20",
+      "expected": "finding",
+      "relation": "direct",
+      "sourceFile": "package.json",
+      "references": [
+        "GHSA-29mw-wpgm-hmr9"
+      ]
+    },
+    {
+      "name": "minimist",
+      "version": "1.2.0",
+      "expected": "finding",
+      "relation": "direct",
+      "sourceFile": "package.json",
+      "references": [
+        "GHSA-vh95-rmgr-6w4m"
+      ]
+    },
+    {
+      "name": "mquery",
+      "version": "6.0.0",
+      "expected": "clean",
+      "relation": "direct",
+      "sourceFile": "package.json",
+      "references": []
+    },
+    {
+      "name": "preact",
+      "version": "10.19.0",
+      "expected": "clean",
+      "relation": "direct",
+      "sourceFile": "package.json",
+      "references": []
     }
-  }
+  ]
 }

@@ -1,14 +1,35 @@
 # BenchmarkSCA-npm
 
-> **Warning:** this repository intentionally pins vulnerable and malicious package examples for
-> scanner evaluation. Do not install or execute its dependencies.
+> **Warning:** this repository intentionally pins vulnerable and malicious packages for scanner
+> evaluation. Do not install or execute its dependencies.
 
-An npm SCA accuracy corpus for Vybscan. `ground-truth.json` is the independent oracle: `cve`,
-`malware`, and `typosquat` entries must be reported; `clean` entries must not be reported.
+A public, reproducible npm SCA accuracy corpus. Every package resolved by the manifests and
+lockfile is labelled in `ground-truth.json`; there are no unlabelled packages hidden from the
+precision or recall denominators.
 
-This is a public starter corpus. `loadyaml@1.0.0` has been withdrawn from the npm registry, so the
-root manifest deliberately verifies the withdrawn-package path without fabricating a lock entry.
-`lockfile-fixture/package-lock.json` independently pins the axios graph and verifies canonical
-package-lock parsing plus transitive classification. Expected transitive findings are recorded in
-`ground-truth.json`. A benchmark result must record this commit, the OSV verification date, the
-scanner digest, and TP/FP/FN/TN plus precision, recall, and F1.
+## Current scorecard
+
+| Packages | Expected findings | Expected clean | Precision | Recall | F1 | Coverage |
+|---:|---:|---:|---:|---:|---:|---:|
+| 7 | 5 | 2 | 100.00% | 100.00% | 100.00% | 100.00% |
+
+The score is pinned to staging scan commit `fe1a505` and analyzer `3db6559658cd`.
+
+## Coverage and reproducibility
+
+- Direct vulnerable, malicious, and clean precision-control packages.
+- A canonical `package-lock.json` transitive case.
+- A withdrawn malware package that is deliberately tested from the root manifest without
+  fabricating a registry lock entry.
+- Every exact label is rechecked against OSV in CI.
+- CI fails on a false positive, false negative, unscanned oracle case, unlabelled scanned package,
+  stale advisory, or score below 100%.
+
+Run locally:
+
+```bash
+node scripts/verify-oracle.mjs
+node scripts/score.mjs
+```
+
+The score applies to this version-pinned corpus; it is not an ecosystem-wide prevalence claim.
