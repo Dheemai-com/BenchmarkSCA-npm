@@ -1,0 +1,12 @@
+{
+  "name": "@dheemai/benchmark-sca-npm-lockfile-fixture",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static package-lock fixture; do not install",
+  "dependencies": {
+    "axios": "0.21.0"
+  },
+  "overrides": {
+    "follow-redirects": "1.15.11"
+  }
+}
