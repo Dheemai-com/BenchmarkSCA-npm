@@ -6,6 +6,7 @@
 An npm SCA accuracy corpus for Vybscan. `ground-truth.json` is the independent oracle: `cve`,
 `malware`, and `typosquat` entries must be reported; `clean` entries must not be reported.
 
-This repository remains internal until every label has been reverified and a lockfile-based
-transitive corpus is added. A benchmark result must record this commit, the OSV verification date,
-the scanner digest, and TP/FP/FN/TN plus precision, recall, and F1.
+This is a public starter corpus. Its current direct-dependency labels come from the established
+Vybscan ruler; a lockfile-based transitive corpus still needs to be added. A benchmark result must
+record this commit, the OSV verification date, the scanner digest, and TP/FP/FN/TN plus precision,
+recall, and F1.
