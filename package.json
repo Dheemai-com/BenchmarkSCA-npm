@@ -1,0 +1,14 @@
+{
+  "name": "@dheemai/benchmark-sca-npm",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static npm SCA benchmark; do not install",
+  "dependencies": {
+    "axios": "0.21.0",
+    "loadyaml": "1.0.0",
+    "lodash": "4.17.20",
+    "minimist": "1.2.0",
+    "mquery": "6.0.0",
+    "preact": "10.19.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "ecosystem": "npm",
+  "verifiedAt": "2026-08-29",
+  "cases": {
+    "axios@0.21.0": { "verdict": "cve", "reference": "CVE-2021-3749" },
+    "loadyaml@1.0.0": { "verdict": "malware", "reference": "MAL-2025-25475" },
+    "lodash@4.17.20": { "verdict": "cve", "reference": "CVE-2021-23337" },
+    "minimist@1.2.0": { "verdict": "cve", "reference": "CVE-2020-7598" },
+    "mquery@6.0.0": { "verdict": "clean", "why": "established-package precision control" },
+    "preact@10.19.0": { "verdict": "clean", "why": "near-name precision control" }
+  }
+}
