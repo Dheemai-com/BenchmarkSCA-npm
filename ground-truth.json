@@ -9,5 +9,12 @@
     "minimist@1.2.0": { "verdict": "cve", "reference": "CVE-2020-7598" },
     "mquery@6.0.0": { "verdict": "clean", "why": "established-package precision control" },
     "preact@10.19.0": { "verdict": "clean", "why": "near-name precision control" }
+  },
+  "transitiveCases": {
+    "follow-redirects@1.15.11": {
+      "verdict": "cve",
+      "via": "axios",
+      "reference": "GHSA-r4q5-vmmm-2653"
+    }
   }
 }
