@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-29T04:39:50.019Z",
+  "generatedAt": "2026-08-29T04:42:02.262Z",
   "benchmarkId": "BenchmarkSCA-npm",
   "ecosystem": "npm",
   "oracleVerifiedAt": "2026-08-29",
   "scan": {
-    "commit": "fe1a505",
-    "scannedAt": "2026-08-29T09:58:00+05:30",
+    "commit": "508e09b",
+    "scannedAt": "2026-08-29T10:10:00+05:30",
     "trigger": "push",
     "analyzerVersion": "3db6559658cd",
     "sastVersion": "c4f9ce954093",

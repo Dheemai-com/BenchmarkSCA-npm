@@ -1,7 +1,7 @@
 # BenchmarkSCA-npm scorecard
 
 - Corpus: **7** fully labelled resolved packages
-- Scan commit: `fe1a505`
+- Scan commit: `508e09b`
 - Analyzer: `3db6559658cd`
 - Precision: **100.00%**
 - Recall: **100.00%**
